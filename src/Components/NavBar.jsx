@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import logo from '../static/assets/logo.png';
+import logo from '../static/assets/icons/logo.png';
 import '../App.scss';
 
 const NavLinks = ({ title })=> {

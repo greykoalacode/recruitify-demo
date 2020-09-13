@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
-import plus from '../../static/assets/plus.png';
-import minus from '../../static/assets/minus.png';
+import plus from '../../static/assets/icons/plus.png';
+import minus from '../../static/assets/icons/minus.png';
 import '../../static/sass/Form.scss';
 import DynamicSelect from './DynamicSelect';
 
