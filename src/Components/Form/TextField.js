@@ -1,13 +1,22 @@
 import React from 'react';
+import '../../static/sass/Form.scss';
+import PropTypes from 'prop-types';
 
-function TextField({label,labelFor, type, required}) {
-    // const value = label.toLowerCase();
+function TextField({label,labelFor, type, required, placeholder}) {
     return (
-        <section style={{display: "flex", flexDirection:"column", alignItems:"flex-start"}}>
+        <div className="text-field">
             <label htmlFor={labelFor}>{label}</label>
-            <input type={type} name={labelFor} placeholder=" " required={required} />
-        </section>
+            <input type={type} name={labelFor} placeholder={placeholder ? placeholder : " "} required={required} />
+        </div>
     )
+};
+
+TextField.propTypes = {
+    label: PropTypes.string.isRequired,
+    labelFor: PropTypes.string.isRequired,
+    type: PropTypes.string,
+    required: PropTypes.bool,
+    placeholder: PropTypes.string
 }
 
 export default TextField;

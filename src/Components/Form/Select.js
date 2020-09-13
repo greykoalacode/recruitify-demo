@@ -1,11 +1,11 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 
 function Select({label, labelFor, options}) {
     return (
-        <section>
-            <label htmlFor={labelFor}>{label}</label>
-            <select name={labelFor}>
+        <section className="select">
+            <label className="select-label" htmlFor={labelFor}>{label}</label>
+            <select className="select-input" name={labelFor}>
                 {
                     options.map(
                         each => (
@@ -16,6 +16,12 @@ function Select({label, labelFor, options}) {
             </select>
         </section>
     )
-}
+};
+
+Select.propTypes ={
+    label: PropTypes.string.isRequired,
+    labelFor: PropTypes.string.isRequired,
+    options: PropTypes.array.isRequired
+};
 
 export default Select;

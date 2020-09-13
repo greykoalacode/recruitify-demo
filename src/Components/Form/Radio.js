@@ -1,21 +1,30 @@
-import React from 'react'
+import React from 'react';
+import '../../static/sass/Form.scss';
+import PropTypes from 'prop-types';
 
-function Radio({label, options}) {
+function Radio({label, options, required}) {
     return (
-        <section>
-            <p>{label}</p>
-            {
-                options.map(
-                    each => (
-                        <div key={each.value}>
-                            <input type="radio" name={label} value={each.value} />
-                            <label htmlFor={each.value}>{each.label}</label>
-                        </div>
+        <div className="radio">
+            <label>{label}</label>
+            <div className="radio-options">
+                {
+                    options.map(
+                        each => (
+                            <div key={each.value}>
+                                <input required={required} type="radio" name={label.toLowerCase()} value={each.value} />
+                                <label htmlFor={each.value} className="radio-label">{each.label}</label>
+                            </div>
+                        )
                     )
-                )
-            }
-        </section>
+                }
+            </div>
+        </div>
     )
-}
+};
+Radio.propTypes ={
+    label: PropTypes.string.isRequired,
+    options: PropTypes.array.isRequired,
+    required: PropTypes.bool
+};
 
-export default Radio
+export default Radio;

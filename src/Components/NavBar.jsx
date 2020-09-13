@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import logo from '../static/assets/logo.png';
-import '../static/sass/NavBar.scss';
+import '../App.scss';
 
 const NavLinks = ({ title })=> {
     const address = title.toLowerCase();
@@ -18,7 +18,7 @@ NavLinks.propTypes = {
 
 
 
-const NavBar = () => {
+function NavBar(){
     const NavList = ["Blog","Contact","Feature","Term & Condition","Login","Sign Up"];
     return(
         <header className="navbar">

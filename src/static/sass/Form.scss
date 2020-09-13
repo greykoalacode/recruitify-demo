@@ -1,16 +1,141 @@
+@import '../../App.scss';
+
 .form{
-    margin: 1em;
+  color: var(--font-color);
+  font-weight: 600;
+}
+
+.form{
+    max-width: 1000px;
+    margin: 0.75em auto;
     padding: 1em;
     box-shadow: 0px 0px 4px 2px rgba( 0, 0, 0, 0.2 );
 
+    &-btn{
+      font-size: 1.15em;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      font-weight: 500;
+      padding: 0.5em;
+      transition: background-color ease-in 0.25s;
+      
+      &-back, &-exit {
+        background-color: var(--white);
+        color: inherit;
+      }
+      &-save{
+        background-color: var(--theme);
+        color: var(--white);
+      }
+      &:hover{
+        background-color: var(--theme);
+        color: var(--white);
+      }
+    }
     &-section{
         padding: 1em;
 
         &-each{
             display: grid;
-            grid-template-columns: repeat(auto-fit,minmax(100px, 1fr));
+            grid-template-columns: repeat(auto-fit,minmax(80px, 1fr));
             gap: 1em;
+            align-items: flex-end;
+
+            &-1{
+              display: grid;
+              grid-template-columns: repeat(3,minmax(80px, 1fr));
+              gap: 1em;
+            }
+            &-2{
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              gap: 1em;
+            }
+            &-3{
+              display: grid;
+              grid-template-columns: 2fr 2fr 1fr;
+              gap:0.5em;
+              align-items: center;
+            }
+            &-4{
+              display: grid;
+              grid-template-columns: 1fr 2fr 1fr;
+              gap:0.5em;
+            }
+        }
+
+        &-title{
+          font-weight: 600;
+          border-bottom: 2px solid var(--tab-border);
+          padding: 0 0 0.25em 0;
+          margin-bottom: 1.5em;
         }
     }
-    
+}
+.text-field, .date-picker{
+    display: flex;
+    flex-direction: column;
+}
+
+.radio-options{
+    margin: 1em 0 0 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+    div{
+      display: flex;
+    }
+}
+
+
+.dynamic-select, .select{
+  &-input{
+    display: flex;
+    select{
+      margin-right: 0;
+    }
+    input{
+      width: 100%;
+    }
+  }
+}
+input, select {
+  padding: 0.5em;
+  margin: 0.5em 0.5em 0 0;
+  background-color: var(--input-color);
+  color: var(--font-color);
+}
+
+.text-field, .dynamic-select, .select, .date-picker, .radio, .checkbox , .dob{
+  margin: 1em 0;
+}
+
+.checkbox-label{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.dob{
+  &-grid{
+    display: flex;
+  }
+  &-input{
+    width: 100%;
+  }
+}
+
+.add-btn{
+  border: none;
+  padding: 0;
+  
+  background-color: var(--input-color);
+  border-radius: 50%;
+  box-shadow: 4px 4px 8px 0px rgba( 0, 0, 0, 0.2 );
+
+  &-container{
+    display: flex;
+    gap: 2em;
+  }
 }

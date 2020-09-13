@@ -1,0 +1,29 @@
+@import '../../App.scss';
+.tab-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:1em;
+    background-color:var(--tab-bg);
+    color: var(--tab-color);
+    &-each a {
+        padding: 1.5em;
+        margin: 0 1.5em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        color: var(--tab-color);
+
+        &:focus, &:hover, &:active{
+            background-color: var(--tab-hover);
+        }
+        p {
+            margin: 0.25em 0;
+        }
+    }
+}
+
+.svg{
+    fill: rgb(162, 202, 193);
+}
