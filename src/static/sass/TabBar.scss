@@ -7,8 +7,8 @@
     background-color:var(--tab-bg);
     color: var(--tab-color);
     &-each a {
-        padding: 1.5em;
-        margin: 0 1.5em;
+        padding: 1em;
+        margin: 0 1em;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -26,4 +26,10 @@
 
 .svg{
     fill: rgb(162, 202, 193);
+}
+@media(max-width:650px){
+    .tab-bar{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    }
 }

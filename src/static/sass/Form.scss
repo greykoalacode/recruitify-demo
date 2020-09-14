@@ -139,3 +139,15 @@ input, select {
     gap: 2em;
   }
 }
+@media(max-width:500px){
+  .form-section-each{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+    &-1, &-2, &-3, &-4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  
+    }
+  }
+}
